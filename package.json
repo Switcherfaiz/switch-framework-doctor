@@ -6,8 +6,7 @@
   "github": "https://github.com/Switcherfaiz/switch-framework-doctor",
   "type": "module",
   "bin": {
-    "switch-doctor": "./bin/switch-doctor.js",
-    "switch-framework-doctor": "./bin/switch-doctor.js"
+    "switch-framework-doctor": "./bin/switch-framework-doctor.js"
   },
   "main": "./lib/run.js",
   "exports": {
@@ -18,8 +17,8 @@
     "lib"
   ],
   "scripts": {
-    "doctor": "node ./bin/switch-doctor.js",
-    "start": "node ./bin/switch-doctor.js"
+    "doctor": "node ./bin/switch-framework-doctor.js",
+    "start": "node ./bin/switch-framework-doctor.js"
   },
   "engines": {
     "node": ">=18"

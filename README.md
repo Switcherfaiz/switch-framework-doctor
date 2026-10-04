@@ -4,9 +4,9 @@ CLI that checks whether **Switch Framework** and the Switch npm components in a 
 
 [Switch Framework](https://github.com/Switcherfaiz/switch-framework) is a no-build frontend runtime: screens, layouts, state, and custom elements served as native ESM. Apps also install `switch-framework-backend` (import map + `/npm` allowlist) and may import third-party Switch components (`peerDependencies.switch-framework`).
 
-**Doctor is the health check for that graph.** It is the Expo Doctor equivalent for Switch: one command that reads the app (or the `switch-framework` package itself), compares installed versions, and reports peer mismatches before the browser hits a blank screen.
+**Doctor is the health check for that graph.** It is the Expo Doctor equivalent for Switch: one command that reads your **app**, compares installed versions, and reports peer mismatches before the browser hits a blank screen.
 
-It ships as its own package so it can be a **dependency of `switch-framework`**. Installing the framework also installs the CLI. You still run it from the project you want checked — the framework package, or an app that depends on it.
+It is **not** part of the `switch-framework` runtime package. Users add it to an app themselves, or accept it when `create-switch-framework-app` asks during scaffold.
 
 ## What it is used for
 
@@ -22,42 +22,48 @@ It does **not** scaffold an app (that is `create-switch-framework-app`) and it d
 
 ## Install
 
-Inside **switch-framework** (so the runtime and the doctor stay on one version line):
+From the create-app CLI (it will ask):
+
+```bash
+npx create-switch-framework-app my-app
+# Also install switch-framework-doctor? (npx switch-framework-doctor)
+```
+
+Or add it to an existing Switch app:
+
+```bash
+npm i -D switch-framework-doctor
+```
 
 ```json
 {
-  "dependencies": {
-    "switch-framework-doctor": "^0.3.0"
-  },
   "scripts": {
-    "doctor": "switch-doctor"
+    "doctor": "switch-framework-doctor"
   }
 }
 ```
 
-In an app, you usually get it transitively from `switch-framework`. You can also add it directly:
+Then:
 
 ```bash
-npm i -D switch-framework-doctor
-npx switch-doctor
+npx switch-framework-doctor
 ```
 
-Or run without installing:
+You can also run it without a project dependency:
 
 ```bash
-npx switch-doctor
 npx switch-framework-doctor
 ```
 
 ## Commands
 
 ```bash
-switch-doctor
-switch-doctor check
-switch-doctor --json
-switch-doctor --fix
-switch-doctor --cwd /path/to/app
-switch-doctor -h
+npx switch-framework-doctor
+npx switch-framework-doctor check
+npx switch-framework-doctor --json
+npx switch-framework-doctor --fix
+npx switch-framework-doctor --cwd /path/to/app
+npx switch-framework-doctor -h
 ```
 
 `check` is the default. `--json` is for CI (exit `1` when any check fails). `--fix` only installs missing allowlisted packages and first-party alignment; peer mismatches print a hint and stay manual.
