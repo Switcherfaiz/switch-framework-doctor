@@ -1,0 +1,39 @@
+{
+  "name": "switch-framework-doctor",
+  "version": "0.3.0",
+  "description": "Check and fix Switch Framework versions and Switch component peer dependencies",
+  "author": "Switcherfaiz",
+  "github": "https://github.com/Switcherfaiz/switch-framework-doctor",
+  "type": "module",
+  "bin": {
+    "switch-doctor": "./bin/switch-doctor.js",
+    "switch-framework-doctor": "./bin/switch-doctor.js"
+  },
+  "main": "./lib/run.js",
+  "exports": {
+    ".": "./lib/run.js"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "scripts": {
+    "doctor": "node ./bin/switch-doctor.js",
+    "start": "node ./bin/switch-doctor.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "switch-framework",
+    "cli",
+    "doctor",
+    "peerDependencies",
+    "switch-framework-doctor"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "semver": "^7.6.3"
+  },
+  "license": "MIT"
+}
