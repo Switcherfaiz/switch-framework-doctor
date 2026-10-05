@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Switcherfaiz/switch-framework-doctor/master/logo.svg" alt="Switch Framework" width="180" />
+</p>
+
 # switch-framework-doctor
 
 CLI that checks whether **Switch Framework** and the Switch npm components in a project can work together.
