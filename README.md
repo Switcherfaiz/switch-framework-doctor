@@ -86,6 +86,8 @@ npx switch-framework-doctor -h
 
 - [switch-framework](https://github.com/Switcherfaiz/switch-framework)
 - [switch-framework-backend](https://github.com/Switcherfaiz/switch-framework-backend)
+- [switch-framework-icons](https://github.com/Switcherfaiz/switch-framework-icons)
+- [switch-framework-router](https://github.com/Switcherfaiz/switch-framework-router)
 - [create-switch-framework-app](https://github.com/Switcherfaiz/create-switch-framework-app)
 
 MIT — same license as the rest of Switch Framework.

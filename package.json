@@ -14,7 +14,8 @@
   },
   "files": [
     "bin",
-    "lib"
+    "lib",
+    "logo.svg"
   ],
   "scripts": {
     "doctor": "node ./bin/switch-framework-doctor.js",
